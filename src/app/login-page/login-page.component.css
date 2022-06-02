@@ -1,0 +1,15 @@
+.login-hero{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to left, #30AD48, #19772c, #09691c);
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    padding: 20px 8% 0 8%;
+    height: 100vh;
+}

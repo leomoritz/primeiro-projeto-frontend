@@ -1,55 +1,52 @@
 <div class="signin-hero">
     <div class="container">
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation" [ngClass]="{'was-validated' : isRequired}" novalidate="">
+
             <div class="header-signin">
                 <img class="mb-4" src="./../../assets/img/folha.png" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Cadastre-se</h1>
               </div>
 
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Nome" name="nome" required>
                 <label for="floatingInput">Nome</label>
-                <div class="invalid-tooltip">
-                    Please choose a unique and valid username.
-                </div>
+               <div class="valid-tooltip">OK</div>
+               <div *ngIf="isRequired" class="invalid-tooltip">Informe o seu nome</div>
             </div>
-
+            
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Sobrenome" name="sobrenome" required>
                 <label for="floatingInput">Sobrenome</label>
-                <div class="invalid-tooltip">
-                    Please choose a unique and valid username.
-                </div>
+                <div class="valid-tooltip">OK</div>
+                <div *ngIf="isRequired" class="invalid-tooltip">Informe o seu sobrenome</div>
             </div>
 
             <div class="form-floating mb-3">
-                <select class="form-select" id="validationCustom04" required>
-                  <option selected disabled value="">Fazenda</option>
+                <select class="form-select" id="validationTooltip04" required="">
+                  <option selected="" disabled="" value="">Selecione...</option>
                   <option>Fazenda Rio Grande</option>
                   <option>Fazenda Operários do Sul</option>
-                  <option>Fazenda Canarinhos</option>
+                  <option>Fazenda Dona Benta de Sá</option>
                 </select>
-                <div class="invalid-feedback">
-                  Please select a valid state.
-                </div>
+                <div class="valid-tooltip">OK</div>
+               <div *ngIf="isRequired" class="invalid-tooltip">Selecione uma fazenda</div>
               </div>
 
             <div class="col-md-6 position-relative">
-                <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" name="email" required>
-                <div class="invalid-tooltip">
-                  Please choose a unique and valid username.
-                </div>
-            </div>
-
-            <div class="col-md-6 position-relative">
-                <input type="email" class="form-control" id="floatingInput" placeholder="Senha" name="email" required>
-              <div class="invalid-tooltip">
-                Please provide a valid city.
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" placeholder="E-mail" required="">
+                <div class="valid-tooltip">OK</div>
+               <div *ngIf="isRequired" class="invalid-tooltip">Informe um e-mail válido</div>
               </div>
             </div>
-
+            <div class="col-md-6 position-relative">
+              <input type="password" class="form-control" id="validationTooltip03" placeholder="Senha" required="">
+              <div class="valid-tooltip">OK</div>
+              <div *ngIf="isRequired" class="invalid-tooltip">Informe uma senha válida</div>
+            </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Cadastrar</button>
+              <button class="btn btn-primary" type="submit" (click)="validaCampos()">Cadastrar</button>
             </div>
           </form>
     </div>

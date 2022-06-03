@@ -9,10 +9,18 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 15px 20% 0 20%;
+    padding: 10px 20% 0 20%;
     height: 100vh;
+}
+
+.needs-validation{
+    justify-content: center;
 }
 
 .header-signin{
     color: white;
+}
+
+.btn-primary{
+    margin: 30px;
 }
